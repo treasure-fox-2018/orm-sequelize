@@ -55,7 +55,7 @@ if (command === "author") {
     break
     case "read_one": 
       id = argv[4]
-      ControllerTag.readOne(Number(id))
+      ControllerTag.readOne(id)
     break
     case "read_all": 
       ControllerTag.readAll()
@@ -80,7 +80,7 @@ if (command === "author") {
     break
     case "read_one": 
       id = argv[4]
-      ControllerArticle.readOne(Number(id))
+      ControllerArticle.readOne(id)
     break
     case "read_all": 
       ControllerArticle.readAll()
