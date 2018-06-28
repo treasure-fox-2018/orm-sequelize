@@ -33,19 +33,47 @@ class View {
     console.log(`There is no data`)
   }
   static authorReadOne (output) {
-    console.log(output)
+    console.log("Data :",output)
   }
 
   static authorReadAll (output) {
-    console.log(output)
+    console.log("All Data :", output)
   }
 
   static authorAdd (output) {
-    console.log("Input Data :", output);
+    console.log("Author Data :", output);
+  }
+
+  static articleAdd (output) {
+    console.log("Article Data :", output);
+  }
+
+  static tagAdd (output) {
+    console.log("Tag Data :", output);
   }
 
   static displayUpdated () {
     console.log(`Data has been updated!`)
+  }
+
+  static displayDeleteMessage (output) {
+    console.log(`${output} data has been deleted!`);
+  }
+
+  static articleReadOne (output) {
+    console.log("Article : ", output);
+  }
+
+  static tagReadOne (output) {
+    console.log("Tag : ", output);
+  }
+  
+  static articleReadAll(output) {
+    console.log("All Article Data :", output)
+  }
+
+  static tagReadAll(output) {
+    console.log("All Tag Data :", output)
   }
 }
 

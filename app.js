@@ -24,36 +24,36 @@ if (table === "author") {
 }
 else if (table === "tag") {
   if (command === "add") {
-
+    Controller.tagAdd(parameter);
   }
   else if (command === "read_one") {
-
+    Controller.tagReadOne(parameter);
   }
   else if (command === "read_all") {
-
+    Controller.tagReadAll();
   }
   else if (command === "update") {
-
+    Controller.tagUpdate(parameter);
   }
-  else if (command === "erase") {
-
+  else if (command === "delete") {
+    Controller.tagDelete(parameter);
   }
 }
 else if (table === "article") {
   if (command === "add") {
-
+    Controller.articleAdd(parameter);
   }
   else if (command === "read_one") {
-
+    Controller.articleReadOne(parameter);
   }
   else if (command === "read_all") {
-
+    Controller.articleReadAll();
   }
   else if (command === "update") {
-
+    Controller.articleUpdate(parameter);
   }
-  else if (command === "erase") {
-
+  else if (command === "delete") {
+    Controller.articleDelete(parameter);
   }
 }
 else if (table === "help") {
