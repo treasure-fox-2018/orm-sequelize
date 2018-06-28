@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "handipriyono",
+    "password": null,
+    "database": "ORMSequelize2",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
