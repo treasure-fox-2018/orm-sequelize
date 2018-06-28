@@ -67,4 +67,14 @@ if (table === "help" || table === undefined) {
     let value = argument[2];
     controller.updateArticle(Id, column_name, value)
   }
+} else if (table === "1") {
+  controller.findWhere1()
+} else if (table === "2") {
+  controller.findWhere2()
+} else if (table === "3") {
+  controller.findWhere3()
+} else if (table === "4") {
+  controller.findWhere4()
+} else if (table === "5") {
+  controller.findWhere5()
 }

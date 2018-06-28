@@ -1,5 +1,8 @@
 const view = require('./view');
 const models = require('./models');
+const Sequelize = require('Sequelize');
+const Op = Sequelize.Op;
+
 
 class Controller {
   static help() {
@@ -356,6 +359,101 @@ class Controller {
       })
     }
   }
+
+  static findWhere1() {
+    // console.log("test");
+    models.author.findAll({
+      where: {
+        first_name: {
+          [Op.or]: ["Lucius", "Loyo"]
+        }
+      }
+    }).then((data) => {
+      if (data === null) {
+        view.showMsg("Data not found")
+      } else {
+        view.showResult(data);
+      }
+    }).catch((err) => {
+      view.showError(err.message);
+    })
+  }
+
+  static findWhere2() {
+    // console.log("test");
+    models.author.findAll({
+      where: {
+        last_name: {
+          [Op.or]: ["Doe", "Fox"]
+        }
+      }
+    }).then((data) => {
+      if (data === null) {
+        view.showMsg("Data not found")
+      } else {
+        view.showResult(data);
+      }
+    }).catch((err) => {
+      view.showError(err.message);
+    })
+  }
+
+  static findWhere3() {
+    // console.log("test");
+    models.author.findAll({
+      where: {
+        id: {
+          [Op.gt]: 7
+        }
+      }
+    }).then((data) => {
+      if (data === null) {
+        view.showMsg("Data not found")
+      } else {
+        view.showResult(data);
+      }
+    }).catch((err) => {
+      view.showError(err.message);
+    })
+  }
+
+  static findWhere4() {
+    // console.log("test");
+    models.tag.findAll({
+      where: {
+        name: {
+          [Op.or]: ["Asynchronicity", "Ludicrocity"]
+        }
+      }
+    }).then((data) => {
+      if (data === null) {
+        view.showMsg("Data not found")
+      } else {
+        view.showResult(data);
+      }
+    }).catch((err) => {
+      view.showError(err.message);
+    })
+  }
+
+  static findWhere5() {
+    // console.log("test");
+    models.article.findAll({
+      where: {
+        authorId: {
+          [Op.or]: [1, 3]
+        }
+      }
+    }).then((data) => {
+      if (data === null) {
+        view.showMsg("Data not found")
+      } else {
+        view.showResult(data);
+      }
+    }).catch((err) => {
+      view.showError(err.message);
+    })
+  }
 }
 
-  module.exports = Controller;
+module.exports = Controller;
