@@ -18,8 +18,8 @@ switch(command) {
   case 'update':
     Controller.update(table, args)
     break;
-  case 'erase':
-    Controller.erase(table, args)
+  case 'delete':
+    Controller.delete(table, args)
     break;
   case 'help':
     Controller.help()
