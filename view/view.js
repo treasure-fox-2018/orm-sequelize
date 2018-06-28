@@ -13,20 +13,20 @@ class View {
   static showHelp() {
     const help = `
     ==== documentation ==========================================================
-    author add -> add<space>"data yang ingin dimasukkan"
+    author add -> add <first_name> <last_name> <religion> <gender> <age>
     author read_one -> read_one<space>"masukkan id author"
-    author read_all -> rad_all
-    author update -> update<space>"masukkan data yang ingin di update dan idnya"
+    author read_all -> read_all
+    author update -> update <id> <first_name> <last_name> <religion> <gender> <age>
     author delete -> delete<space>"masukkan id author"
-    tag add -> add<space>"data yang ingin dimasukkan"
+    tag add -> add <name>
     tag read_one -> read_one<space>"masukkan id tag"
-    tag read_all -> rad_all
-    tag update -> update<space>"masukkan data yang ingin di update dan idnya"
+    tag read_all -> read_all
+    tag update -> update <id> <name>
     tag delete -> delete<space>"masukkan id tag"
-    article add -> add<space>"data yang ingin dimasukkan"
+    article add -> add <title> <body> <authorId> <tagId>
     article read_one -> read_one<space>"masukkan id article"
-    article read_all -> rad_all
-    article update -> update<space>"masukkan data yang ingin di update dan idnya"
+    article read_all -> read_all
+    article update -> update <id> <title> <body> <authorId> <tagId>
     article delete -> delete<space>"masukkan id article"
     ==== documentation ==========================================================
         `

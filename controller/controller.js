@@ -4,7 +4,7 @@ const Models = require('../models')
 
 class Controller {
   static showHelp() {
-    View.printMessage(help)
+    View.showHelp()
   }
 
   static authorAdd (first_name, last_name, religion, gender, age) {
