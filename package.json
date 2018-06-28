@@ -1,0 +1,24 @@
+{
+  "name": "orm-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treasure-fox-2018/orm-sequelize.git"
+  },
+  "author": "Setia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treasure-fox-2018/orm-sequelize/issues"
+  },
+  "homepage": "https://github.com/treasure-fox-2018/orm-sequelize#readme",
+  "dependencies": {
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
+  }
+}
