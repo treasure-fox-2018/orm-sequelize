@@ -34,10 +34,18 @@ class Article {
   }
 
   static updateArticle(id, title, body, authorId, tagId) {
-    Model.Article.update({title: title, body: body, AuthorId: authorId, TagId: tagId}, {where: {id: id}})
+    Model.Article.update({title: title, body: body, AuthorId: authorId, TagId: tagId}, {
+      where: {
+        id: {
+          [Op.eq]: id
+        }
+      }})
       .then(data => {
         if (data[0] == 1) {
-          console.log(`Data ${id}Successfully update`);
+          console.log(`Data id ${id} Successfully update`);
+        } else {
+          console.log(`Sorry! Data id ${id} not found`);
+          
         }
       })
       .catch(err => {

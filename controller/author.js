@@ -1,4 +1,6 @@
 const Model = require("../models")
+const Sequelize = require("sequelize")
+const Op = Sequelize.Op
 
 class Author {
 
@@ -31,12 +33,25 @@ class Author {
   }
   
   static readAll() {
-    Model.Author.findAll({raw: true})
+    Model.Author.findAll({
+      where: {
+        age: {
+          [Op.gte]: 18
+        }
+      }})
       .then(data => {
-        console.log(data);
+        if (data.length === 0) {
+          console.log("Data not found");
+        } else {
+          const dataAll = data
+          for (let i = 0; i < data.length; i++) {
+            console.log(data[i].dataValues);
+          }
+        }
+        
       })
       .catch(err => {
-        console.log(err);
+        console.log("Message", err);
       })
   }
 
@@ -47,12 +62,17 @@ class Author {
       religion: religion, 
       gender: gender, 
       age: age
-    }, { where: {id: id}})
+    }, {
+    where: {
+      id: {
+        [Op.eq]: id
+      }
+    }})
       .then(data => {
         if (data[0] == 1) {
-          console.log(`Data ${id}Successfully update`);
+          console.log(`Data ${id} Successfully update`);
         } else {
-          console.log("Data up to date");
+          console.log(`Data id ${id} not found`);
         }
       })
       .catch(err => {
