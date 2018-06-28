@@ -1,3 +1,9 @@
+const chalk = require('chalk');
+
+var Table = require('cli-table');
+
+const util = require('util')
+
 class View {
   static help() {
     console.log("======= ORM-SEQUELIZE =====================================================");
@@ -21,16 +27,18 @@ class View {
 
   static showResult(data) {
     console.log("=== your result ==============");
-    console.log(data);
+    let objString = util.inspect(data, false, null)
+    console.log(chalk.blue(objString));
     console.log("==============================");
+
   }
 
   static showMsg(output) {
-    console.log(output);
+    console.log(chalk.green(output));
   }
 
   static showError(msg) {
-    console.log(msg);
+    console.log(chalk.red(msg));
   }
 }
 
