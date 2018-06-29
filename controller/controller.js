@@ -2,11 +2,17 @@ let model = require('../models')
 let View = require('../view/view')
 
 class Controller{
+
+    static help(){
+        View.help()
+    }
+
+
     static addAuthor(data){
         model.Author.create({first_name: data[0],last_name: data[1],religion: data[2],gender: data[3], age: data[4]})
         .then(author => {
-            View.display(' ')
-            View.display(`Succesfully added account ${JSON.stringify(author.get({plain:true}))}`)
+            View.display(`Succesfully added account 
+${JSON.stringify(author.get({plain:true}))}`)
         })
         .catch(err => {
             View.display('ERROR Message:', err.message)
@@ -105,7 +111,7 @@ class Controller{
             }
         })
         .then(result => {
-            View.display(`Successfully update author with id: ${result}`)
+            View.display(`Successfully update ${result} author`)
         })
         .catch(err =>{
             View.display('ERROR Message:', err.message)
@@ -122,7 +128,7 @@ class Controller{
             }
         })
         .then(result => {
-            View.display(`Successfully update article with id: ${result}`)
+            View.display(`Successfully update ${result} article`)
         })
         .catch(err =>{
             View.display('ERROR Message:', err.message)
@@ -139,7 +145,7 @@ class Controller{
             }
         })
         .then(result => {
-            View.display(`Successfully update tag with id: ${result}`)
+            View.display(`Successfully update ${result} tag`)
         })
         .catch(err =>{
             View.display('ERROR Message:', err.message)
