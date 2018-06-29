@@ -245,8 +245,8 @@ class Controller {
     })
   }
 
-  static read_oneArticle(Id) {
-    models.article.findById(Number(Id), {
+  static read_oneArticle(AuthorId) {
+    models.article.findOne({where: {AuthorId: Number(AuthorId)}}, {
       raw: true
     }).then((data) => {
       if (data === null) {
