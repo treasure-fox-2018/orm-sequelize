@@ -1,5 +1,14 @@
 const Model = require('../models');
 const View = require('../views/article');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+const operatorsAliases = {
+  $like: Op.like,
+  $between: Op.between,
+  $or: Op.or,
+  $in: Op.in,
+  $and: Op.and,
+}
 
 class Controller {
 

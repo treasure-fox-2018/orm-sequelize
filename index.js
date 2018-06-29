@@ -13,7 +13,7 @@ if (target == 'author'){
   } else if (command == 'read_one'){
     Author.show(input)
   } else if (command == 'read_all'){
-    Author.showAll()
+    Author.showAll(input)
   } else if (command == 'update'){
     Author.update(input)
   } else if (command == 'erase'){
@@ -28,7 +28,7 @@ if (target == 'author'){
   } else if (command == 'read_one'){
     Article.show(input)
   } else if (command == 'read_all'){
-    Article.showAll()
+    Article.showAll(input)
   } else if (command == 'update'){
     Article.update(input)
   } else if (command == 'erase'){
@@ -36,19 +36,20 @@ if (target == 'author'){
   } else {
     List.help();
   }
-  
 
-} else if (target == 'article'){
+} else if (target == 'tag'){
   if (command == 'add'){
-
+    Article.add(input)
   } else if (command == 'read_one'){
-    
+    Article.show(input)
   } else if (command == 'read_all'){
-    
+    Article.showAll(input)
   } else if (command == 'update'){
-    
+    Article.update(input)
   } else if (command == 'erase'){
-    
+    Article.delete(input)
+  } else {
+    List.help();
   }
 
 } else {

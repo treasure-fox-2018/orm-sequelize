@@ -1,5 +1,14 @@
 const Model = require('../models');
 const View = require('../views/author');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+const operatorsAliases = {
+  $like: Op.like,
+  $between: Op.between,
+  $or: Op.or,
+  $in: Op.in,
+  $and: Op.and,
+}
 
 class Controller {
 
@@ -27,7 +36,33 @@ class Controller {
     })
   }
 
-  static showAll(){
+  static showAll(input){
+    let keyword = input[0]
+    let value1 = input[1]
+    let value2 = input[2]
+
+    if (keyword == 'id'){
+      Model.Author.findAll({where:{id:{[Op.in]: [value1, value2]}},raw:true}).then(author =>{
+        View.message(author)
+      })
+    } else if (keyword == 'name'){
+      Model.Author.findAll({where:{[Op.or]: [{first_name: value1}, {last_name: value1}]},raw:true}).then(author =>{
+        View.message(author)
+      })
+    } else if (keyword == 'fullname'){
+      Model.Author.findAll({where:{[Op.and]: [{first_name: value1}, {last_name: value2}]},raw:true}).then(author =>{
+        View.message(author)
+      })
+    } else if (keyword == 'first_name'){
+      Model.Author.findAll({where:{first_name: {[Op.like]: `%${value1}%`}},raw:true}).then(author =>{
+        View.message(author)
+      })
+    } else if (keyword == 'age'){
+      Model.Author.findAll({where:{age: {[Op.between]: [20, 40]}},raw:true}).then(author =>{
+        View.message(author)
+      })
+    }
+
     Model.Author.findAll({raw:true}).then(author =>{
       View.message(author)
     })

@@ -4,18 +4,18 @@ class Controller{
   static help(){
     let list = [
       `author add -> add<space> "data yang ingin dimasukan"`,
-      `author readId -> readId<space> "id yang ingin dimasukan"`,
-      `author readAll -> readAll`,
+      `author read_one -> read_one<space> "search keyword bisa apa saja"`,
+      `author read_all -> read_all<space> "masukkan keyword dan value e.g (id 2 atau name Budi) untuk filter result"`,
       `author update -> update<space> "data yang ingin dimasukan"`,
       `author delete -> delete<space> "id yang ingin di delete"`,
       `tag add -> add<space> "data yang ingin dimasukan"`,
-      `tag readId -> readId<space> "id yang ingin dimasukan"`,
-      `tag readAll -> readAll`,
+      `tag read -> read_one -> read_one<space> "search keyword bisa apa saja"`,
+      `tag readAll -> read_all<space> "masukkan keyword dan value e.g (name Budi)  untuk filter result"`,,
       `tag update -> update<space> "data yang ingin dimasukan"`,
       `tag delete -> delete<space> "id yang ingin di delete"`,
       `article add -> add<space> "data yang ingin dimasukan"`,
-      `article readId -> readId<space> "id yang ingin dimasukan"`,
-      `article readAll -> readAll`,
+      `article read_one -> read_one<space> "search keyword bisa apa saja"`,
+      `article read_all -> read_all<space> "masukkan keyword dan value e.g (AuthorId 2 atau title Supernova) untuk filter result"`,
       `article update -> update<space> "data yang ingin dimasukan"`,
       `article delete -> delete<space> "id yang ingin di delete"`
     ]

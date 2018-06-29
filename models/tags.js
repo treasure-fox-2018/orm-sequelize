@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   var Tags = sequelize.define('Tags', {
     name: DataTypes.CHAR
