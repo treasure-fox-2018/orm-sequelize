@@ -245,8 +245,8 @@ class Controller {
     })
   }
 
-  static read_oneArticle(AuthorId) {
-    models.article.findOne({where: {AuthorId: Number(AuthorId)}}, {
+  static read_oneArticle(Id) {
+    models.article.findById(Number(Id), {
       raw: true
     }).then((data) => {
       if (data === null) {
@@ -279,7 +279,7 @@ class Controller {
   static deleteArticle(Id) {
     models.article.destroy({
       where: {
-        id: `${Id}`
+        Authorid: `${Id}`
       }
     }).then((output) => {
       if (output === 0) {
