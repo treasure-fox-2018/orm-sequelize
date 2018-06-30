@@ -1,6 +1,10 @@
 
 class View {
 
+    static display(message) {
+        console.log(message)
+    }
+
     static help() {
         console.log(`node index.js [table_name] add [attribute_value] [attribute_value]`);
         console.log(`node index.js [table_name] readOne [id]`);
