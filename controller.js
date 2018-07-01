@@ -25,7 +25,7 @@ class Controller {
     static readOneAuthor(id) {
         Author.findById(id)
         .then(author => {
-            View.displayMessage(author.get({raw:true}))
+            View.tableOne(author.get({raw:true}))
             // console.log(author)
         })
         .catch(err => {
@@ -37,7 +37,7 @@ class Controller {
     static readAllAuthor() {
         Author.findAll({raw:true})
         .then(author => {
-            View.displayMessage(author)
+            View.tableAll(author)
             // console.log(author)
         })
         .catch(err => {
@@ -92,7 +92,7 @@ class Controller {
     static readOneArticle(id) {
         Article.findById(id)
         .then(article => {
-            View.displayMessage(article.get({raw:true}))
+            View.tableOne(article.get({raw:true}))
         })
         .catch(err => {
             View.displayError(err)
@@ -102,7 +102,7 @@ class Controller {
     static readAllArticles() {
         Article.findAll({raw:true})
         .then(articles => {
-            View.displayMessage(articles)
+            View.tableAll(articles)
         })
         .catch(err => {
             View.displayError(err)
@@ -146,7 +146,7 @@ class Controller {
     static readOneTag(id) {
         Tag.findById(id, {raw:true})
         .then(article => {
-            View.displayMessage(article)
+            View.tableOne(article)
         })
         .catch(err => {
             View.displayError(err)
@@ -156,7 +156,7 @@ class Controller {
     static readAllTags() {
         Tag.findAll({raw:true})
         .then(tags => {
-            View.displayMessage(tags)
+            View.tableAll(tags)
         })
         .catch(err => {
             View.displayError(err)
